@@ -1,0 +1,28 @@
+App\Entity\Forecast:
+    properties:
+        date:
+            - NotNull:
+                message: 'Date is required.'
+                groups: [new, edit]
+        temperature_celsjus:
+            - NotNull:
+                message: 'Temperature is required.'
+                groups: [new, edit]
+            - Range:
+                min: -50
+                max: 50
+                notInRangeMessage: 'Temperature must be between -50°C and 50°C.'
+                groups: [new, edit]
+        pressure:
+            - NotNull:
+                message: 'Pressure is required.'
+                groups: [new, edit]
+            - Range:
+                min: 800
+                max: 1100
+                notInRangeMessage: 'Pressure must be between 800 and 1100 hPa.'
+                groups: [new, edit]
+        location:
+            - NotNull:
+                message: 'Location is required.'
+                groups: [new, edit]

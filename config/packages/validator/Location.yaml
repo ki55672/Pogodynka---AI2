@@ -1,0 +1,15 @@
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                message: 'City is required.'
+                groups: [new, edit]
+
+        coordinates:
+            - NotBlank:
+                message: 'Coordinates are required.'
+                groups: [new, edit]
+            - Regex:
+                pattern: '/^\s*(?:[+-]?(?:90(?:\.0+)?|[0-8]?\d(?:\.\d+)?)),\s*[+-]?(?:180(?:\.0+)?|1[0-7]\d(?:\.\d+)?|[0-9]?\d(?:\.\d+)?)\s*$/' #chatgpt
+                message: 'Enter latitude between -90 and 90 and longitude between -180 and 180, separated by a comma.'
+                groups: [new, edit]

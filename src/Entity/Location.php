@@ -30,8 +30,12 @@ class Location
     #[ORM\OneToMany(targetEntity: Forecast::class, mappedBy: 'location')]
     private Collection $forecasts;
 
+
+
     #[ORM\Column(length: 50)]
     private ?string $coordinates = null;
+
+
 
     public function __construct()
     {
@@ -67,7 +71,7 @@ class Location
         return $this;
     }
 
-  
+
 
     /**
      * @return Collection<int, Forecast>
