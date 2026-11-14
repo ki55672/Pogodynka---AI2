@@ -78,4 +78,14 @@ class Forecast
 
         return $this;
     }
+    public function getFahrenheit(): ?float
+    {
+        $celsius = $this->getTemperatureCelsjus();
+
+         if ($celsius === null) {
+            return null;
+        }
+
+        return ($celsius * 9 / 5) + 32;
+    }
 }
